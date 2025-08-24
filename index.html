@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Café Amore - Admin Panel</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="admin-sidebar.css">
+  <link rel="stylesheet" href="adminpanel.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <!-- ✖ Close Button -->
+    <span class="close-btn" id="closeSidebar"><i class="fas fa-times"></i></span>
+
+    <div class="logo">
+      <img src="logo.png" alt="Café Amore Logo" class="logo-img">
+      <span class="logo-text">Café Amore</span>
+    </div>
+    <nav>
+      <ul>
+        <li id="homeLink" class="active"><i class="fas fa-home"></i><span>Home</span></li>
+        <li id="menuLink"><i class="fas fa-utensils"></i><span>Menu Management</span></li>
+        <li id="orderLink"><i class="fas fa-clipboard-list"></i><span>Orders</span></li>
+        <li id="incomingLink"><i class="fas fa-inbox"></i><span>Incoming Orders</span></li>
+        <li id="inventoryLink"><i class="fas fa-boxes"></i><span>Inventory</span></li>
+        <li id="salesLink"><i class="fas fa-chart-line"></i><span>Sales</span></li>
+      </ul>
+    </nav>
+
+    <div id="editProfileLink" class="profile-card">
+      <div class="profile-avatar">
+        <i class="fas fa-user-circle"></i>
+      </div>
+      <div class="profile-info">
+        <p class="profile-name">Admin</p>
+        <p class="edit-text">Edit Profile</p>
+      </div>
+    </div>
+
+    <div id="logoutLink" class="logout">
+      <i class="fas fa-sign-out-alt"></i> Log Out
+    </div>
+  </aside>
+
+  <!-- Hamburger Menu -->
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header>
+      <h1>Welcome, Admin</h1>
+      <p>Manage and monitor your café operations at a glance</p>
+    </header>
+
+    <!-- Dashboard Overview -->
+    <section class="dashboard">
+      <div class="card">
+        <h3><i class="fas fa-receipt"></i> Orders</h3>
+        <p id="ordersToday">0 Today</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-dollar-sign"></i> Sales</h3>
+        <p id="salesToday">₱0.00</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-boxes"></i> Inventory</h3>
+        <p id="lowInventory">0 Items Low</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-utensils"></i> Menu Items</h3>
+        <p id="menuCount">0 Available</p>
+      </div>
+    </section>
+
+    <!-- Analytics -->
+    <section class="analytics">
+      <div class="chart-card">
+        <h3><i class="fas fa-chart-line"></i> Sales Analytics</h3>
+        <canvas id="salesChart"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="adminpanel.js"></script>
+  <script type="module" src="admin-sidebar.js"></script>
+</body>
+</html>
